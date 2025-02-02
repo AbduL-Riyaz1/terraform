@@ -11,8 +11,8 @@ resource "aws_instance" "this" {
   }
 }
 
-resource "aws_security_group" "allow_tls_1" {
-  name        = "allow_tls_1_changes"
+resource "aws_security_group" "allow_tls" {
+  name        = "allow_tls"
   description = "Allow TLS inbound traffic and all outbound traffic"
   vpc_id      =  local.vpc_id /* if you don't have default vpc mentoin likr this or else no need to give it takes default */
 
