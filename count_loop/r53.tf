@@ -5,6 +5,7 @@ resource "aws_route53_record" "expense" {
   type    = "A"
   ttl     = 1
   records = [aws_instance.expense[count.index].private_ip] #list type
+  allow_overwrite = true   #if no records is present in your r53 ignore this
 }
 
 resource "aws_route53_record" "frontend" {
@@ -13,4 +14,5 @@ resource "aws_route53_record" "frontend" {
   type    = "A"
   ttl     = 1
   records = [aws_instance.expense[2].public_ip] #list type
+  allow_overwrite = true   #if no records is present in your r53 ignore this
 }
